@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Person : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Person : MonoBehaviour
 
     private PersonManager personManager;
 
+    public Sprite[] personsSprites;
+
+
+    public Image spritePerson;
 
     private void Awake()
     {
@@ -28,6 +33,9 @@ public class Person : MonoBehaviour
     {
         // Generate the first random number
         firstRandomNumber = Random.Range(minRange, maxRange);
+
+        spritePerson.sprite = personsSprites[firstRandomNumber - 1];
+
 
         // Generate the second random number while it is the same as the first
         do
