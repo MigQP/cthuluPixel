@@ -12,8 +12,16 @@ public class Person : MonoBehaviour
     public int minRange = 1;
     public int maxRange = 5;
 
-    private int firstRandomNumber;
-    private int secondRandomNumber;
+    public int firstRandomNumber;
+    public int secondRandomNumber;
+
+    private PersonManager personManager;
+
+
+    private void Awake()
+    {
+        personManager = FindObjectOfType<PersonManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +41,9 @@ public class Person : MonoBehaviour
 
         firstNumber.text = firstRandomNumber.ToString();
         secondNumber.text = secondRandomNumber.ToString();
+        personManager.firstRune = firstRandomNumber;
+        personManager.secondRune = secondRandomNumber;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

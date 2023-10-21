@@ -7,10 +7,16 @@ public class PersonManager : MonoBehaviour
     public GameObject personPrefab;
 
 
+    public GameObject personInScene;
+
+
+    public int firstRune;
+    public int secondRune;
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject childGameObject = Instantiate(personPrefab, this.transform);
+        CreatePerson();
     }
 
     // Update is called once per frame
@@ -18,11 +24,28 @@ public class PersonManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            foreach (Transform child in transform)
-            {
-                Destroy(child.gameObject);
-            }
-            GameObject childGameObject = Instantiate(personPrefab, this.transform);
+            //DestroyChildrenPerson();
+            //CreatePerson();
         }
+
+
     }
+
+
+    public void DestroyChildrenPerson()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        } 
+
+    }
+
+    public void CreatePerson()
+    {
+        GameObject childGameObject = Instantiate(personPrefab, this.transform);
+
+    }
+
+    
 }
