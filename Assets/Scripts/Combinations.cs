@@ -210,7 +210,7 @@ public class Combinations : MonoBehaviour
 
         if (int.Parse(combs[0].text) == 2 && int.Parse(combs[1].text) == 3 || int.Parse(combs[0].text) == 3 && int.Parse(combs[1].text) == 2)
         {
-            combs[2].text = "E";
+            combs[2].text = "F";
 
             //GameObject childGameObject = Instantiate(runeToSpawn, runeSpawnPoints[2].transform);
             //childGameObject.GetComponent<Image>().sprite = runes[9];

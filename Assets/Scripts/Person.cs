@@ -20,8 +20,12 @@ public class Person : MonoBehaviour
 
     public Sprite[] personsSprites;
 
+    public GameObject[] characters;
 
-    public Image spritePerson;
+
+    public GameObject[] runesAnims;
+
+    public Transform textbox;
 
     private void Awake()
     {
@@ -34,7 +38,8 @@ public class Person : MonoBehaviour
         // Generate the first random number
         firstRandomNumber = Random.Range(minRange, maxRange);
 
-        spritePerson.sprite = personsSprites[firstRandomNumber - 1];
+
+        GameObject childGameObject = Instantiate(characters[firstRandomNumber - 1], this.transform);
 
 
         // Generate the second random number while it is the same as the first
@@ -51,6 +56,8 @@ public class Person : MonoBehaviour
         secondNumber.text = secondRandomNumber.ToString();
         personManager.firstRune = firstRandomNumber;
         personManager.secondRune = secondRandomNumber;
+
+        GameObject childGameObject1 = Instantiate(runesAnims[secondRandomNumber - 1], textbox);
     }
 
 

@@ -21,7 +21,7 @@ public class HeartsManager : MonoBehaviour
     {
         for (int i = 0; i < GameManager.instance.lives; i++)
         {
-            GameObject childGameObject = Instantiate(heart, this.transform);
+            //GameObject childGameObject = Instantiate(heart, this.transform);
         }
     }
 
