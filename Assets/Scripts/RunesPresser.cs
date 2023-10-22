@@ -23,6 +23,9 @@ public class RunesPresser : MonoBehaviour
 
     private Combinations combinations;
 
+
+    public AudioSource badSound;
+
     void Awake()
     {
         personManager = FindObjectOfType<PersonManager>();
@@ -65,6 +68,7 @@ public class RunesPresser : MonoBehaviour
 
             //Debug.Log("Te equivocaste");
             //errorPanel.SetActive(true);
+            badSound.Play();
             GameManager.instance.SetLives(1);
             errorCount++;
             //combinations.SetCombo();
@@ -84,12 +88,13 @@ public class RunesPresser : MonoBehaviour
                 personManager.DestroyChildrenPerson();
                 personManager.CreatePerson();
                 */
+
+
             }
 
             else
             {
                 Debug.Log("Te equivocaste");
-
 
                 personManager.DestroyChildrenPerson();
                 personManager.CreatePerson();

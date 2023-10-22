@@ -148,6 +148,7 @@ public class Combinations : MonoBehaviour
 
         for (int i = 0; i < runeSpawnPoints.Length; i++)
         {
+            if (runeSpawnPoints[i].transform.childCount > 0)
             Destroy(runeSpawnPoints[i].transform.GetChild(0).gameObject);
         }
     }
