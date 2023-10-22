@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
 
     bool isGameOver;
 
-    public GameObject gameOverPanel; 
+    public GameObject gameOverPanel;
+
+    private AudioManager audioManager;
 
     void Awake()
     {
         instance = this;
-       
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
 
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("GAME OVER");
             gameOverPanel.SetActive(true);
             isGameOver = true;
+            audioManager.GameOverFade();
         }
     }
 

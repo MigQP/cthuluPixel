@@ -16,6 +16,10 @@ public class ComboPresser : MonoBehaviour
 
     private Combinations combinations;
 
+    public AudioSource goodCombo;
+
+    public AudioSource badCombo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +44,24 @@ public class ComboPresser : MonoBehaviour
         if (buttonText.text == comboText.text)
         {
             Debug.Log("Correcto");
+
+            goodCombo.Play();
         }
 
         else if (buttonText.text != comboText.text && comboText.text != "")
         {
             Debug.Log("Error");
             GameManager.instance.SetLives(1);
+
+            badCombo.Play();    
+        }
+
+        else if (buttonText.text != comboText.text && comboText.text == "" && combinations.combs[0].text != "" && combinations.combs[0].text != "")
+        {
+            Debug.Log("Error");
+            GameManager.instance.SetLives(1);
+
+            badCombo.Play();
         }
 
         if (comboText.text != "")

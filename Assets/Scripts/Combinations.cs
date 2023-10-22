@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Combinations : MonoBehaviour
 {
-    private TMP_Text[] combs;
+    public TMP_Text[] combs;
 
 
 
